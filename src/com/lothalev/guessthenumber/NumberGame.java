@@ -14,6 +14,7 @@ public class NumberGame {
 	}
 	
 	public void Guess(int guess){
+		if (guess == numToGuess) return;
 		if (guess>numToGuess && guess<currentMax)
 			currentMax=guess;
 		if (guess<numToGuess && guess>currentMin)
