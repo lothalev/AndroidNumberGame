@@ -3,6 +3,7 @@ package com.lothalev.guessthenumber;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -37,17 +38,19 @@ public class GameActivity extends ActionBarActivity {
 		try {
 			Integer ansInt = Integer.parseInt(ansStr);
 		} catch(Exception e) {
-			Toast.makeText(GameActivity.this, "The answer must be a number", Toast.LENGTH_LONG).show();
+			Toast.makeText(GameActivity.this, "The answer must be a number", Toast.LENGTH_SHORT).show();
 			return;
 		}
 		
 		
 		if (ansStr.trim().length()==0) {
-			Toast.makeText(GameActivity.this, "Please give an answer", Toast.LENGTH_LONG).show();
+			Toast.makeText(GameActivity.this, "Please give an answer", Toast.LENGTH_SHORT).show();
 			return;
 		}
-		ng.Guess(Integer.parseInt(answer.getText().toString()));
-
+		if (ng.Guess(Integer.parseInt(answer.getText().toString()))) {
+			Toast.makeText(GameActivity.this, "CONGRATULATIONS! Number guessed in "+ng.tries+" tries.", Toast.LENGTH_LONG).show();
+			startActivity(new Intent(getApplicationContext(), MainActivity.class));
+		}
 		UpdateGameDisplay(v);
 	}
 	
