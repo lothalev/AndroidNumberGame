@@ -32,11 +32,14 @@ public class GameActivity extends ActionBarActivity {
 	}
 
 	public void onTryClicked(View v) {
+		Integer ansInt;
+		
 		EditText answer = (EditText) findViewById(R.id.answer);
 		String ansStr = answer.getText().toString();
-
+		answer.setText("");
+		
 		try {
-			Integer ansInt = Integer.parseInt(ansStr);
+			ansInt = Integer.parseInt(ansStr);
 		} catch(Exception e) {
 			Toast.makeText(GameActivity.this, "The answer must be a number", Toast.LENGTH_SHORT).show();
 			return;
@@ -47,7 +50,7 @@ public class GameActivity extends ActionBarActivity {
 			Toast.makeText(GameActivity.this, "Please give an answer", Toast.LENGTH_SHORT).show();
 			return;
 		}
-		if (ng.Guess(Integer.parseInt(answer.getText().toString()))) {
+		if (ng.Guess(ansInt)) {
 			Toast.makeText(GameActivity.this, "CONGRATULATIONS! Number guessed in "+ng.tries+" tries.", Toast.LENGTH_LONG).show();
 			startActivity(new Intent(getApplicationContext(), MainActivity.class));
 		}
@@ -57,8 +60,11 @@ public class GameActivity extends ActionBarActivity {
 	public void UpdateGameDisplay(View v) {
 		TextView min = (TextView) findViewById(R.id.lblGreater);
 		TextView max = (TextView) findViewById(R.id.lblSmaller);
+		TextView status = (TextView) findViewById(R.id.lblStatus);
 		min.setText(ng.currentMin+"");
 		max.setText(ng.currentMax+"");
+		status.setText("You have tried "+ng.tries+" times.");
+		
 	}
 	
 	@Override

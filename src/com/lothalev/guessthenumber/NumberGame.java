@@ -6,7 +6,7 @@ import android.R.bool;
 
 public class NumberGame {
 	public int currentMin, currentMax;
-	public int numToGuess;
+	private int numToGuess;
 	public int tries;
 	
 	public NumberGame(){
