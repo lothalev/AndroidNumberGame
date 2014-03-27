@@ -14,9 +14,9 @@ public class NumberGame {
 	}
 	
 	public void Guess(int guess){
-		if (guess>numToGuess)
+		if (guess>numToGuess && guess<currentMax)
 			currentMax=guess;
-		if (guess<numToGuess)
+		if (guess<numToGuess && guess>currentMin)
 			currentMin=guess;
 // TODO: sprawdzenie czy odpowiedz poprawna
 		
