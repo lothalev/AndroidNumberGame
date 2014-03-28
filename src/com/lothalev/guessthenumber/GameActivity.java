@@ -26,8 +26,9 @@ public class GameActivity extends ActionBarActivity {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
-		
-		ng = new NumberGame();
+
+		=getSupportFragmentManager().findFragmentById(R.id.lblGreater)
+		ng = new NumberGame(1000);
 
 	}
 
@@ -61,7 +62,7 @@ public class GameActivity extends ActionBarActivity {
 	public void onKeypadKeyClicked(View v){
 		Button button = (Button)v;
 		EditText answer = (EditText) findViewById(R.id.answer);
-		answer.setText(answer.getText()+button.getText().toString());
+		answer.append(button.getText().toString());
 	
 	}
 
@@ -119,8 +120,8 @@ public class GameActivity extends ActionBarActivity {
 					false);
 			TextView minN = (TextView) rootView.findViewById(R.id.lblSmaller);
 			TextView maxN = (TextView) rootView.findViewById(R.id.lblGreater);
-			minN.setText("1");
-			maxN.setText("1000");
+			minN.setText("1000");
+			maxN.setText("0");
 
 			return rootView;
 		}

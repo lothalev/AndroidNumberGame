@@ -9,12 +9,12 @@ public class NumberGame {
 	private int numToGuess;
 	public int tries;
 	
-	public NumberGame(){
-		currentMax=1000;
+	public NumberGame(int max){
+		currentMax=max;
 		currentMin=0;
 		tries=0;
 		Random r = new Random();
-		numToGuess = r.nextInt(currentMax);
+		numToGuess = r.nextInt(currentMax)+1;
 	}
 	
 	public boolean Guess(int guess){
