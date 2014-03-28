@@ -37,6 +37,7 @@ public class GameActivity extends ActionBarActivity {
 		EditText answer = (EditText) findViewById(R.id.answer);
 		String ansStr = answer.getText().toString();
 		answer.setText("");
+
 		
 		try {
 			ansInt = Integer.parseInt(ansStr);
@@ -55,6 +56,22 @@ public class GameActivity extends ActionBarActivity {
 			startActivity(new Intent(getApplicationContext(), MainActivity.class));
 		}
 		UpdateGameDisplay(v);
+	}
+	
+	public void onKeypadKeyClicked(View v){
+		Button button = (Button)v;
+		EditText answer = (EditText) findViewById(R.id.answer);
+		answer.setText(answer.getText()+button.getText().toString());
+	
+	}
+
+	public void onKeypadBackClicked(View v){
+		EditText answer = (EditText) findViewById(R.id.answer);
+		String str = answer.getText().toString();
+		if (str.isEmpty())
+			return;
+		answer.setText(str.substring(0, str.length()-1));
+	
 	}
 	
 	public void UpdateGameDisplay(View v) {
@@ -102,8 +119,8 @@ public class GameActivity extends ActionBarActivity {
 					false);
 			TextView minN = (TextView) rootView.findViewById(R.id.lblSmaller);
 			TextView maxN = (TextView) rootView.findViewById(R.id.lblGreater);
-			minN.setText("999");
-			maxN.setText("999");
+			minN.setText("1");
+			maxN.setText("1000");
 
 			return rootView;
 		}

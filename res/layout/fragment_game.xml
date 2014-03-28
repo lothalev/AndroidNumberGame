@@ -100,19 +100,25 @@
                 android:id="@+id/b1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1" />
+                android:onClick="onKeypadKeyClicked"
+                android:text="1"
+                tools:ignore="HardcodedText" />
 
             <Button
                 android:id="@+id/b2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2" />
+                android:onClick="onKeypadKeyClicked"
+                android:text="2"
+                tools:ignore="HardcodedText" />
 
             <Button
                 android:id="@+id/b3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="3" />
+                android:onClick="onKeypadKeyClicked"
+                android:text="3"
+                tools:ignore="HardcodedText" />
 
         </TableRow>
 
@@ -125,19 +131,25 @@
                 android:id="@+id/b4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="4" />
+                android:onClick="onKeypadKeyClicked"
+                android:text="4"
+                tools:ignore="HardcodedText" />
 
             <Button
                 android:id="@+id/b5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="5" />
+                android:onClick="onKeypadKeyClicked"
+                android:text="5"
+                tools:ignore="HardcodedText" />
 
             <Button
                 android:id="@+id/b6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="6" />
+                android:onClick="onKeypadKeyClicked"
+                android:text="6"
+                tools:ignore="HardcodedText" />
 
         </TableRow>
 
@@ -150,19 +162,26 @@
                 android:id="@+id/b7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="7" />
+                android:onClick="onKeypadKeyClicked"
+                android:text="7"
+                tools:ignore="HardcodedText" />
 
             <Button
                 android:id="@+id/b8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="8" />
+                android:onClick="onKeypadKeyClicked"
+                android:text="8"
+                tools:ignore="HardcodedText" />
 
             <Button
                 android:id="@+id/b9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="9" />
+                android:onClick="onKeypadKeyClicked"
+                android:text="9"
+                tools:ignore="HardcodedText" />
+
         </TableRow>
 
         <TableRow
@@ -174,13 +193,24 @@
                 android:id="@+id/b0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0" />
+                android:onClick="onKeypadKeyClicked"
+                android:text="0"
+                tools:ignore="HardcodedText" />
 
             <ImageButton
                 android:id="@+id/bClear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:contentDescription="@string/clear"
+                android:onClick="onKeypadBackClicked"
                 android:src="@android:drawable/ic_input_delete" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onTryClicked"
+                android:text="OK" />
 
         </TableRow>
 
@@ -193,7 +223,7 @@
         android:layout_alignLeft="@+id/textView4"
         android:layout_below="@+id/answer"
         android:layout_marginTop="37dp"
-        android:text="Welcome to the game. Good luck!"
+        android:text="@string/welcome_to_the_game_good_luck_"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

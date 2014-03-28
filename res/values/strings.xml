@@ -9,5 +9,7 @@
     <string name="achievements">Achievements</string>
     <string name="settings">Settings</string>
     <string name="the_number_is">The number is</string>
+    <string name="clear">Clear</string>
+    <string name="welcome_to_the_game_good_luck_">Welcome to the game. Good luck!</string>
 
 </resources>
