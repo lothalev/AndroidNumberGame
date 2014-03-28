@@ -4,6 +4,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -16,7 +17,7 @@ import android.os.Build;
 
 public class GameActivity extends ActionBarActivity {
 	
-	NumberGame ng; // game logic class 
+	static NumberGame ng; // game logic class 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -26,9 +27,8 @@ public class GameActivity extends ActionBarActivity {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
-
-		=getSupportFragmentManager().findFragmentById(R.id.lblGreater)
-		ng = new NumberGame(1000);
+	     SharedPreferences prefs = getSharedPreferences (SettingsActivity.PREFS_NAME, 0);
+		ng = new NumberGame(prefs.getInt("GameLevel", 4));
 
 	}
 
@@ -50,6 +50,11 @@ public class GameActivity extends ActionBarActivity {
 		
 		if (ansStr.trim().length()==0) {
 			Toast.makeText(GameActivity.this, "Please give an answer", Toast.LENGTH_SHORT).show();
+			return;
+		}
+		
+		if (ansInt<=ng.currentMin || ansInt>=ng.currentMax){
+			Toast.makeText(GameActivity.this, "Please give a guess between "+ng.currentMin+" and "+ng.currentMax, Toast.LENGTH_SHORT).show();
 			return;
 		}
 		if (ng.Guess(ansInt)) {
@@ -120,8 +125,8 @@ public class GameActivity extends ActionBarActivity {
 					false);
 			TextView minN = (TextView) rootView.findViewById(R.id.lblSmaller);
 			TextView maxN = (TextView) rootView.findViewById(R.id.lblGreater);
-			minN.setText("1000");
-			maxN.setText("0");
+			minN.setText(GameActivity.ng.currentMax+""); 
+			maxN.setText(GameActivity.ng.currentMin+"");
 
 			return rootView;
 		}

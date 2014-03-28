@@ -22,8 +22,8 @@ public class MainActivity extends ActionBarActivity {
 		Toast.makeText(this, "Not implemented yet.", Toast.LENGTH_SHORT).show();
 	}
 	public void SettingsonClick(View v) {
-		//startActivity(new Intent(getApplicationContext(), GameActivity.class));
-		Toast.makeText(this, "Not implemented yet.", Toast.LENGTH_SHORT).show();
+		startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
+		//Toast.makeText(this, "Not implemented yet.", Toast.LENGTH_SHORT).show();
 	}
 
 	@Override
