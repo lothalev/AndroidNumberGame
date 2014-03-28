@@ -2,8 +2,6 @@ package com.lothalev.guessthenumber;
 
 import java.util.Random;
 
-import android.R.bool;
-
 public class NumberGame {
 	public int currentMin, currentMax;
 	private int numToGuess;

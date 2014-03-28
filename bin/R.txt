@@ -369,6 +369,7 @@ int string achievements 0x7f0a0012
 int string action_settings 0x7f0a000f
 int string app_name 0x7f0a000d
 int string clear 0x7f0a0015
+int string game_level 0x7f0a0018
 int string hello_world 0x7f0a000e
 int string new_game 0x7f0a0011
 int string settings 0x7f0a0013
