@@ -5,6 +5,7 @@ import java.util.Random;
 public class NumberGame {
 	public class Score {
 		private int level, tries, digitcounts[];
+		// store time in highscores?
 		
 		public Score(int level, int tries, int[] digitcounts){
 			this.level=level;
@@ -24,6 +25,7 @@ public class NumberGame {
 		}
 	}
 
+	public final static String PREFS_NAME = "NumberGame";
 	private int numToGuess;
 	private int level;
 	public int tries;

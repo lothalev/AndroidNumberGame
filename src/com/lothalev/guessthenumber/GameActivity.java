@@ -28,7 +28,7 @@ public class GameActivity extends ActionBarActivity {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
-	     SharedPreferences prefs = getSharedPreferences (SettingsActivity.PREFS_NAME, 0);
+	     SharedPreferences prefs = getSharedPreferences (NumberGame.PREFS_NAME, 0);
 		ng = new NumberGame(prefs.getInt("GameLevel", 4));
 
 	}

@@ -35,11 +35,27 @@
         <activity
             android:name="com.lothalev.guessthenumber.SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:screenOrientation="landscape"
+            android:parentActivityName="com.lothalev.guessthenumber.MainActivity"
+            android:screenOrientation="landscape" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.lothalev.guessthenumber.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.lothalev.guessthenumber.HighscoreListActivity"
+            android:label="@string/title_highscore_list"
             android:parentActivityName="com.lothalev.guessthenumber.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.lothalev.guessthenumber.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.lothalev.guessthenumber.HighscoreDetailActivity"
+            android:label="@string/title_highscore_detail"
+            android:parentActivityName="com.lothalev.guessthenumber.HighscoreListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.lothalev.guessthenumber.HighscoreListActivity" />
         </activity>
     </application>
 
